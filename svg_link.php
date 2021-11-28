@@ -89,7 +89,7 @@ function wp_get_svg( $path = '', $args = [] ) {
         $svg = str_replace( '<svg ', '<svg class="' . esc_attr( $css_class ) . '" role="' . esc_attr( $role_attr ) . '" ', $svg );
     }
 
-    // Als we een SVG en een plaatje hebben moet er een link tag omheen, dat doen we hier. Zo niet, dan geven we alleen de svg door.
+    // Als we een SVG en een link hebben moet er een link tag omheen, dat doen we hier. Zo niet, dan geven we alleen de svg door.
     if($url && $svg) {
         return '<a href="' . $url . '">' . $svg . '</a>';
     }
