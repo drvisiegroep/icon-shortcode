@@ -4,7 +4,7 @@
 // Geupdate als shortcode met opties voor link en plaatje
 // Voorbeeld (alleen svg):  [wp_svg_icon icon=logo] 
 // Voorbeeld (svg en link): [wp_svg_icon icon=logo link=https://www.websiteaanbieder.nl]
-// Voorbeeld inline:  do_shortcode('[wp_svg_icon_link icon=shirt link=https://www.websiteaanbieder.nl]'); 
+// Voorbeeld inline:  do_shortcode('[wp_svg_icon icon=shirt link=https://www.websiteaanbieder.nl]'); 
 // todo: url check regex  
 //
 
