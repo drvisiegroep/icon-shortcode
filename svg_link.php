@@ -2,9 +2,9 @@
 
 //
 // Geupdate als shortcode met opties voor link en plaatje
-// Voorbeeld (alleen svg):  [wp_svg_icon icon=logo] 
-// Voorbeeld (svg en link): [wp_svg_icon icon=logo link=https://www.websiteaanbieder.nl]
-// Voorbeeld inline:  do_shortcode('[wp_svg_icon icon=shirt link=https://www.websiteaanbieder.nl]'); 
+// Voorbeeld (alleen svg):  [wa_svg_icon icon=logo] 
+// Voorbeeld (svg en link): [wa_svg_icon icon=logo link=https://www.websiteaanbieder.nl]
+// Voorbeeld inline:  do_shortcode('[wa_svg_icon icon=shirt link=https://www.websiteaanbieder.nl]'); 
 // todo: url check regex  
 //
 
@@ -16,7 +16,7 @@
  * @return string        Inline SVG markup
  */
 
-function wp_svg_icon ($atts) {
+function wa_svg_icon ($atts) {
 
 // No atts, no party
  if ( !$atts ) {
@@ -53,7 +53,7 @@ function wp_svg_icon ($atts) {
   return wp_get_svg( $path, $args );
   
 }
-add_shortcode('wp_svg_icon', 'wp_svg_icon');
+add_shortcode('wa_svg_icon', 'wa_svg_icon');
 
 
 /* Generic helper to modify the markup for a given path to an SVG
@@ -87,6 +87,8 @@ function wp_get_svg( $path = '', $args = [] ) {
         $svg = file_get_contents( $path );
         $svg = preg_replace( '/(width|height)="[\d\.]+"/i', '', $svg );
         $svg = str_replace( '<svg ', '<svg class="' . esc_attr( $css_class ) . '" role="' . esc_attr( $role_attr ) . '" ', $svg );
+    } else {
+      echo 'SVG does not exist at this path.';
     }
 
     // Als we een SVG en een link hebben moet er een link tag omheen, dat doen we hier. Zo niet, dan geven we alleen de svg door.
